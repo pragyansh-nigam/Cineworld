@@ -1,0 +1,130 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up</title>
+	<style type="text/css">
+		
+		a:hover
+		{
+			color:red;
+		}
+
+	</style>
+</head>
+<body>
+<p align="right" style="font-family:vardana;"><a href="/htmlpro/home"><b>Home</b></a> </p>
+<p align="right" style="font-family:vardana;"><b>Already have an account?</b> <a href="/htmlpro/login"><b>Log in</b></a> </p>
+<h2><p style="font-family:vardana;">SIGN  UP  TO  CINEWORLD:</h2></p>
+<p style="font-family:vardana;"><b>Create an account:</b></p>
+<div class="tm-right-column">
+<div class="tm-content-div">
+<section id="signup" class="tm-section">
+<div class="row">
+<form action='/htmlpro/signup' method="post">
+{% csrf_token %}
+<div class="col-lg-6">
+<FIELDSET> <legend><h1><p style="font-family:vardana;">SIGN UP</p></h1></legend>
+
+<div class="form-group" style="font-family:vardana;">
+<b>NAME :</b>          <input type='text' name='name' placeholder="Enter your full name" size="40" required/> 
+</div>
+<br>
+<div class="form-group" style="font-family:vardana;">
+<b>AGE :</b>             <input type='text' name='age' placeholder="Enter your age" size="40" required/>
+</div>
+<br>
+<div class="form-group" style="font-family:vardana;">
+<b>MOBILE :</b>     <input type='text' name="mobile" size="40" required/>
+</div>
+<br>
+<div class="form-group" style="font-family:vardana;">
+<!--<b>GENDER:</b> <input type='radio' name="gen">Male    <input type='radio' name="gen">Female   <input type='radio' name="gen">Others-->
+<b>GENDER:</b>           <select><option>--Select--</option>
+								 <option>Male</option>
+								 <option>Female</option>
+								 <option>Custom</option>
+						 </select> 
+</div>
+<br>
+<div class="form-group" style="font-family:vardana;">
+<b>REGION:</b>           <select><option>--Select--</option>
+				<option>Argentina</option>
+				<option>Brazil</option>
+				<option>Canada</option>
+				<option>Denmark</option>
+				<option>England</option>
+				<option>France</option>
+				<option>Germany</option>
+				<option>Honduras</option>
+				<option>India</option>
+				<option>Jakarta</option>
+				<option>Kuwait</option>
+				<option>Luxembourg</option>
+				<option>Malaysia</option>
+				<option>New York</option>
+				<option>Osaka</option>
+				<option>Portugal</option>
+				<option>Qatar</option>
+				<option>Riyadh</option>
+				<option>Spain</option>
+				<option>Tokyo</option>
+				<option>Uruguay</option>
+				<option>Verona</option>
+				<option>Wales</option>
+				<option>Yakutsk</option>
+				<option>Zurich</option>
+</select>
+</div>
+<br>
+<div class="form-group" style="font-family:vardana;">
+<b>LANGUAGE:</b>    <select><option>English</option>
+						<option>French</option>
+						<option>German</option>
+						<option>Hindi</option>
+	
+</select>
+</div>
+<br>
+<div class="form-group" style="font-family:vardana;">
+<b>CREATE ACCOUNT :</b>         <input type="email" name="mail" size="40" required/>
+</div>
+<br>
+<div class="form-group" style="font-family:vardana;">
+<b>PASSWORD :</b>                        <input type="password" name="pwd" size="40" placeholder="Password must contain atleast 6 characters" required/>
+</div>
+<br>
+<div class="form-group" style="font-family:vardana;">
+<b>CONFIRM PASSWORD:</b>    <input type="PASSWORD" name="" size="40" required/>
+</div>
+<br>
+<div class="form-group" style="font-family:vardana;">
+<B>RANGE:</B>      <input type="range" name="" min="1" max="10" step="2">
+</div>
+<br>
+<div class="form-group" style="font-family:vardana;">
+<input type="checkbox" name=""> I agree to the terms and conditions. </p>
+</div>
+<br>
+<button type="submit" class="btn btn-success" style="font-family:vardana;">Sign Up</button>
+&nbsp;&nbsp;&nbsp;        
+<button type="reset" class="btn btn-success" style="font-family:vardana;">Reset</button>
+<br><br>
+{% for x in msg %}
+	<b style="color:green;">{{x}}</b>
+{% endfor %}
+  
+<!--<b style="font-family:vardana; color:green;">{{msg}}</b>--> 
+              
+<!--<input type="Submit" name="">       <input type="Reset" name=""> -->
+
+</FIELDSET>
+</div>
+</form>	
+</div>
+</section>
+</div>
+</div>
+</body>
+</html>
